@@ -9,8 +9,10 @@ export function Header(props: HeaderProps) {
 	return <Styled.Container>
 		<h2>WeMovies</h2>
 		<Styled.CartInfo>
-			<span>Meu Carrinho</span>
-			<span>{ props.items } Itens</span>
+			<div>
+				<p>Meu Carrinho</p>
+				<p>{ props.items } Itens</p>
+			</div>
 			<CartIcon/>
 		</Styled.CartInfo>
 	</Styled.Container>
