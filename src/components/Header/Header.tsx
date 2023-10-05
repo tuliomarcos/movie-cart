@@ -1,19 +1,19 @@
 import * as Styled from './Header.style'
 import { CartIcon } from 'components/Icons'
+import { useCart } from 'hooks/useCart'
+import { useNavigate } from 'react-router-dom'
 
-interface HeaderProps {
-	items: number
-}
-
-export function Header(props: HeaderProps) {
+export function Header() {
+	const { quantityOfItemSelected } = useCart()
+	const navigate = useNavigate()
 	return <Styled.Container>
 		<h2>WeMovies</h2>
 		<Styled.CartInfo>
 			<div>
 				<p>Meu Carrinho</p>
-				<p>{ props.items } Itens</p>
+				<p>{ quantityOfItemSelected } Itens</p>
 			</div>
-			<CartIcon/>
+			<CartIcon onClick={() => navigate('/cart')}/>
 		</Styled.CartInfo>
 	</Styled.Container>
 }
