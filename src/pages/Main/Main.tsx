@@ -10,6 +10,7 @@ export function Main() {
   const [data, setData] = useState<GetMoviesResponse[] | undefined>(undefined)
   const [isLoading, setIsLoading] = useState(false)
   const { cart, handleAddToCart } = useCart()
+  const priceDefault = 29.99
 
   const movieService = MovieService()
 
@@ -35,7 +36,7 @@ export function Main() {
             key={item.id}
             image={item.imageUrl}
             title={item.title}
-            price={10}
+            price={priceDefault}
             quantity={
               cart.find((cartItem) => cartItem.id === item.id)?.quantity ?? 0
             }
@@ -43,7 +44,7 @@ export function Main() {
               handleAddToCart({
                 id: item.id,
                 image: item.imageUrl,
-                price: 10,
+                price: priceDefault,
                 title: item.title
               })
             }
