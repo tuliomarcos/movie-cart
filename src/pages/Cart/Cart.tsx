@@ -6,7 +6,7 @@ import { useCart } from 'hooks/useCart'
 import { useNavigate } from 'react-router-dom'
 
 export function Cart() {
-  const { cart, totalPrice, handleQuantity } = useCart()
+  const { cart, totalPrice, handleQuantity, handleRemoveToCart } = useCart()
   const navigate = useNavigate()
 
   return <Styled.Container>
@@ -33,7 +33,7 @@ export function Cart() {
           <PlusIcon onClick={() => handleQuantity('increase', item.id)} />  
         </div>
         <span className="price">R$ {(item.price * item.quantity).toFixed(2)}</span>
-        <TrashIcon />
+        <TrashIcon onClick={() => handleRemoveToCart(item.id)}/>
       </Styled.ItemList>
     ))}
     <Styled.FooterList>

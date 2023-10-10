@@ -19,6 +19,10 @@ export function useCart() {
     })
   }
 
+  function handleRemoveToCart(movieId: string) {
+    setCart((prev) => prev.filter(item => item.id !== movieId))
+  }
+
   function handleQuantity(action: 'decrease' | 'increase', movieId: string) {
     setCart((prev) => {
       const indexExist = prev.findIndex((item) => item.id === movieId)
@@ -57,6 +61,7 @@ export function useCart() {
     totalPrice,
     handleQuantity,
     handleAddToCart,
+    handleRemoveToCart,
     quantityOfItemSelected,
   }
 }
