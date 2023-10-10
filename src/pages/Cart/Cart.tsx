@@ -6,7 +6,7 @@ import { useCart } from 'hooks/useCart'
 import { useNavigate } from 'react-router-dom'
 
 export function Cart() {
-  const { cart } = useCart()
+  const { cart, totalPrice, handleQuantity } = useCart()
   const navigate = useNavigate()
 
   return <Styled.Container>
@@ -23,11 +23,16 @@ export function Cart() {
           <span className="price">R$ {item.price}</span>
         </div>
         <div className="quantify">
-          <LessIcon />
-          <input type="number" />  
-          <PlusIcon />  
+          <LessIcon onClick={() => handleQuantity('decrease', item.id)} />
+          <input
+            type="number"
+            min="0"
+            value={cart.find((cartItem) => cartItem.id === item.id)?.quantity || 0}
+            onChange={() => {}}
+          />  
+          <PlusIcon onClick={() => handleQuantity('increase', item.id)} />  
         </div>
-        <span className="price">R$ {item.price}</span>
+        <span className="price">R$ {(item.price * item.quantity).toFixed(2)}</span>
         <TrashIcon />
       </Styled.ItemList>
     ))}
@@ -35,7 +40,7 @@ export function Cart() {
       <button onClick={() => navigate('/success')}>Finalizar pedido</button>
       <div>
         <span className="total">Total</span>
-        <span className="price">R$ 29.99</span>
+        <span className="price">R$ {totalPrice.toFixed(2)}</span>
       </div>
     </Styled.FooterList>
   </Styled.Container>
