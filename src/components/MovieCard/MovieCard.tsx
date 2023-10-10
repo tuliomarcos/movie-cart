@@ -17,7 +17,7 @@ export function MovieCard(props: CardProps) {
       <img src={props.image} alt={props.title} />
       <p>{props.title}</p>
       <span>R$ {props.price}</span>
-      <button onClick={props.onAddToCart}>
+      <button className={ props.quantity ? 'active' : ''} onClick={props.onAddToCart}>
         <ShoppingCart/>
         {props.quantity}
         <span>{isSelectedItem ? 'Item adicionando' : 'Adicionar ao carrinho'}</span>

@@ -46,5 +46,10 @@ export const Container = styled.div`
     > span {
       margin-left: 8px;
     }
+
+    &.active {
+      background-color: #039B00;
+      border: solid 1px #039B00;
+    }
   }
 `
