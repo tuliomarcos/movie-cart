@@ -1,13 +1,13 @@
 import * as Styled from 'components/ThemeProvider/ThemeProvider.style'
-import { SuccessIcon } from "components/Icons/Success"
+import { ReloadIcon } from "components/Icons/Reload"
 import { useNavigate } from 'react-router-dom'
 
-export function Success() {
+export function Reload() {
   const navigate = useNavigate()
   
   return <Styled.SuccessAndReloadPage>
-    <p>Compra realizada com sucesso!</p>
-    <SuccessIcon></SuccessIcon>
+    <p>Parece que não há nada por aqui :(</p>
+    <ReloadIcon></ReloadIcon>
     <button onClick={() => navigate('/')}>Voltar</button>
   </Styled.SuccessAndReloadPage>
 }
