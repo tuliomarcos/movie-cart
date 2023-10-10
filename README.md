@@ -1,4 +1,7 @@
-# React + TypeScript + Vite
+# Test wefit
+This is a test for wefit. In this test I used The Movie DB API to consume the movie lists.
+
+## React + TypeScript + Vite + Styled Components
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
