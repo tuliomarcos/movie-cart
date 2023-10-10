@@ -1,7 +1,11 @@
 # Test wefit
-This is a test for wefit. In this test I used The Movie DB API to consume the movie lists.
+This is a test for wefit. In this test I used [The Movie DB API](https://developer.themoviedb.org/reference/trending-movies) to consume the movie lists. This project I used React, TypeScript, Vite and Styled Components, to rodar the project install all dependencies:
 
-## React + TypeScript + Vite + Styled Components
+`yarn` or `npm install`
+
+and after
+
+`yarn dev` or `npm run dev`
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
