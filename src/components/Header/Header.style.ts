@@ -8,11 +8,16 @@ export const Container = styled.header`
   max-width: 960px;
   padding: 0 10px;
   margin: 0 auto 24px;
+
+  h2 {
+    cursor: pointer;
+  }
 `
 
 export const CartInfo = styled.div`
   display: flex;
   gap: 8px;
+  cursor: pointer;
 
   div {
     display: flex;
