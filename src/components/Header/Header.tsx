@@ -1,5 +1,5 @@
 import * as Styled from './Header.style'
-import { CartIcon } from 'components/Icons'
+import { CartIcon } from 'components/Icons/Cart'
 import { useCart } from 'hooks/useCart'
 import { useNavigate } from 'react-router-dom'
 
