@@ -10,6 +10,14 @@ export function useCart() {
     () => cart.reduce((prev, curr) => prev + curr.quantity * curr.price, 0),
     [cart]
   )
+  
+  function resetCart() {
+    setCart(() => [])
+  }
+
+  function handleRemoveToCart(movieId: string) {
+    setCart((prev) => prev.filter(item => item.id !== movieId))
+  }
 
   function handleAddToCart(movie: Omit<CartItem, 'quantity'>) {
     setCart((prev) => {
@@ -17,10 +25,6 @@ export function useCart() {
       if (!itemExist) prev.push({ ...movie, quantity: 1 })
       return [...prev]
     })
-  }
-
-  function handleRemoveToCart(movieId: string) {
-    setCart((prev) => prev.filter(item => item.id !== movieId))
   }
 
   function handleQuantity(action: 'decrease' | 'increase', movieId: string) {
@@ -58,6 +62,7 @@ export function useCart() {
 
   return {
     cart,
+    resetCart,
     totalPrice,
     handleQuantity,
     handleAddToCart,

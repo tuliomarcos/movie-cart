@@ -4,12 +4,13 @@ import { PlusIcon } from 'components/Icons/Plus'
 import { TrashIcon } from 'components/Icons/Trash'
 import { useCart } from 'hooks/useCart'
 import { useNavigate } from 'react-router-dom'
+import { Reload } from 'pages/Reload'
 
 export function Cart() {
-  const { cart, totalPrice, handleQuantity, handleRemoveToCart } = useCart()
+  const { cart, totalPrice, quantityOfItemSelected, handleQuantity, handleRemoveToCart } = useCart()
   const navigate = useNavigate()
 
-  return <Styled.Container>
+  return !quantityOfItemSelected ? <Reload /> : <Styled.Container>
     <Styled.HeaderList>
       <p>produto</p>
       <p>qtd</p>
