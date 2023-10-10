@@ -16,6 +16,7 @@ export const Container = styled.div`
     width: 147px;
     height: 188px;
     margin-bottom: 7px;
+    object-fit: cover;
   }
 
   p {
