@@ -1,10 +1,10 @@
 import * as Styled from './Cart.style'
+import { useNavigate } from 'react-router-dom'
+import { useCart } from 'hooks/useCart'
+import { Reload } from 'pages/Reload'
 import { LessIcon } from 'components/Icons/Less'
 import { PlusIcon } from 'components/Icons/Plus'
 import { TrashIcon } from 'components/Icons/Trash'
-import { useCart } from 'hooks/useCart'
-import { useNavigate } from 'react-router-dom'
-import { Reload } from 'pages/Reload'
 
 export function Cart() {
   const { cart, totalPrice, quantityOfItemSelected, handleQuantity, handleRemoveToCart } = useCart()
@@ -19,7 +19,7 @@ export function Cart() {
     {cart.map((item) => (
       <Styled.ItemList key={item.id}>
         <img src={item.image} alt={item.title} />
-        <div>
+        <div className="infos">
           <span className="title">{item.title}</span>
           <span className="price">R$ {item.price}</span>
         </div>
@@ -34,7 +34,9 @@ export function Cart() {
           <PlusIcon onClick={() => handleQuantity('increase', item.id)} />  
         </div>
         <span className="price">R$ {(item.price * item.quantity).toFixed(2)}</span>
-        <TrashIcon onClick={() => handleRemoveToCart(item.id)}/>
+        <div className="trash">
+          <TrashIcon onClick={() => handleRemoveToCart(item.id)}/>
+        </div>
       </Styled.ItemList>
     ))}
     <Styled.FooterList>
