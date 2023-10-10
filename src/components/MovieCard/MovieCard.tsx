@@ -20,7 +20,7 @@ export function MovieCard(props: CardProps) {
       <button onClick={props.onAddToCart}>
         <ShoppingCart/>
         {props.quantity}
-        {isSelectedItem ? 'Item adicionando' : 'Adicionar ao carrinho'}
+        <span>{isSelectedItem ? 'Item adicionando' : 'Adicionar ao carrinho'}</span>
       </button>
     </Styled.Container>
   )

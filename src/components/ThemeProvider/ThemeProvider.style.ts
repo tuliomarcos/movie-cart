@@ -5,8 +5,8 @@ export const GlobalStyle = createGlobalStyle`
 		background-color: #2F2E41;
 		color: #fff;
 		font-family: 'Open Sans', sans-serif;
-		font-weight: 600;
-		font-size: 14px;
+		font-weight: 700;
+		font-size: 16px;
 	}
 
 	p {

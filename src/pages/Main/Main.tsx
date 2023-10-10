@@ -1,3 +1,4 @@
+import * as Styled from './Main.style'
 import { useState } from "react"
 import { useCart } from "hooks/useCart"
 import { MovieCard } from "components/MovieCard"
@@ -34,7 +35,7 @@ export function Main() {
   const [isLoading] = useState(false)
   const {cart, handleAddToCart} = useCart()
 
-  return <main>
+  return <Styled.Container>
     { isLoading && <Spinner /> }
     { !isLoading && dataMock.map((item) => (
       <MovieCard
@@ -52,5 +53,5 @@ export function Main() {
         })}
       /> 
     ))}
-  </main>
+  </Styled.Container>
 }
